@@ -1,0 +1,162 @@
+﻿@import 'constants';
+
+@mixin _font($size, $color, $lineHeight: 1.4) {
+    font-size: $size;
+    font-family: "Open Sans", sans-serif ;
+    line-height: $lineHeight;
+    color: $color;
+    text-decoration: none;
+}
+
+@mixin fontNav() {
+    @include _font(1rem, $colorForeground);
+    
+    @media (min-width: $tablet) {
+        @include _font(1.5rem, $colorForeground);
+    }
+}
+
+@mixin fontSidebar() {
+    @include _font(1.3rem, $colorForeground);
+}
+
+@mixin fontHeroTitle() {
+    @include _font(3rem, $colorForeground);
+    font-weight: 600;
+    
+    @media (min-width: $desktop) {
+        @include _font(6rem, $colorForeground);
+    }
+}
+
+@mixin fontSectionTitle() {
+    @include _font(2rem, $colorForeground);
+    
+    @media (min-width: $desktop) {
+        @include _font(2.5rem, $colorForeground);
+    }
+}
+
+@mixin fontTitle() {
+    @include _font(3rem, $colorForeground);
+
+    @media (min-width: $desktop) {
+        @include _font(4rem, $colorForeground);
+    }
+}
+
+@mixin fontSubtitle() {
+    @include _font(1.5rem, $colorForegroundSubtle);
+
+    @media (min-width: $desktop) {
+        @include _font(2rem, $colorForegroundSubtle);
+    }
+}
+
+@mixin fontHeroMessage() {
+    @include _font(1.8rem, $colorForeground);
+    
+    @media (min-width: $desktop) {
+        @include _font(3rem, $colorForeground);
+    }
+}
+
+@mixin fontInput() {
+    @include _font(1rem, $colorForegroundInverse, 1);
+
+    @media (min-width: $desktop) {
+        @include _font(1.8rem, $colorForegroundInverse);
+    }
+}
+
+@mixin fontLabel() {
+    @include _font(1rem, $colorForegroundSubtle);
+    text-transform: uppercase;
+
+    @media (min-width: $desktop) {
+        @include _font(1.4rem, $colorForegroundSubtle);
+    }
+}
+
+@mixin fontBody() {
+    @include _font(1rem, $colorForeground);
+
+    @media (min-width: $desktop) {
+        @include _font(1.4rem, $colorForeground);
+    }
+}
+
+@mixin fontButton($color) {
+    @include _font(1rem, $color);
+    font-weight: 600;
+    text-transform: uppercase;
+
+    @media (min-width: $desktop) {
+        @include _font(1.4rem, $color);
+    }
+}
+
+@mixin cover() {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+@mixin gutterMargins() {
+    margin-left: $spacingGutter;
+    margin-right: $spacingGutter;
+
+    @media (min-width: $desktop) {
+        margin-left: $spacingGutterDesktop;
+        margin-right: $spacingGutterDesktop;
+    }
+    
+    @media (min-width: $largeDesktop) {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: calc(#{$largeDesktop} - 2*#{$spacingGutterDesktop});
+    }
+}
+
+@mixin _button($color) {
+    @include fontButton($color);
+    display: block;
+    padding: $spacingSmall;
+    width: 8rem;
+    text-align: center;
+    margin-top: $spacingSmall;
+    transition: 0.2s all ease;
+
+    @media (min-width: $desktop) {
+        width: 12rem;
+        margin-top: $spacingMedium;
+    }
+}
+
+@mixin primaryButton($color, $backgroundColor) {
+    @include _button($color);
+    background: $backgroundColor;
+
+    &:hover, &:focus {
+        background-color: $colorHighlight;
+        @include hasOutline;
+    }
+}
+
+@mixin secondaryButton($color) {
+    @include _button($color);
+    background-color: transparent;
+    border: 1px solid $color;
+
+    &:hover, &:focus {
+        color: $colorHighlight;
+        border-color: $colorHighlight;
+        @include hasOutline;
+    }
+}
+
+@mixin hasOutline() {
+    outline: $colorHighlight solid 1px;
+}

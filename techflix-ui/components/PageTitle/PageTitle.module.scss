@@ -1,0 +1,8 @@
+﻿@import "../../styles/mixins";
+@import "../../styles/constants";
+
+.title {
+    @include fontTitle;
+    @include gutterMargins;
+    margin-top: $spacingSection;
+}

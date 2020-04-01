@@ -1,0 +1,32 @@
+﻿@import "../../../styles/constants";
+@import "../../../styles/mixins";
+
+$sidebarWidth: 85vw;
+
+.sidebar {
+    position: fixed;
+    width: $sidebarWidth;
+    left: -$sidebarWidth;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    background: rgba($colorBackgroundSubtle, 0.98);
+    transition: $animationQuick;
+    
+    display: flex;
+    flex-direction: column;
+    padding-top: $mobileHeaderHeight + $spacingLarge;
+    
+    &.open {
+        left: 0;
+    }
+    
+    @media (min-width: $tablet) {
+        display: none;
+    }
+}
+
+.link {
+    @include fontSidebar;
+    padding: $spacingTiny 20vw;
+}

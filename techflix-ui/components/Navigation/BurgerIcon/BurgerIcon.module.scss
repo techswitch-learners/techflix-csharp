@@ -1,0 +1,51 @@
+﻿@import "../../../styles/constants";
+@import "../../../styles/mixins";
+
+$burgerHeight: 0.15rem;
+$burgerWidth: 1.2rem;
+
+.burger {
+    background: $colorForeground;
+    border: none;
+    height: $burgerHeight;
+    width: $burgerWidth;
+    transition: $animationQuick;
+    position: relative;
+    outline: none;
+    
+    &:before, &:after {
+        content: "";
+        background: $colorForeground;
+        height: $burgerHeight;
+        width: $burgerWidth;
+        position: absolute;
+        left: 0;
+        transition: $animationQuick;
+    }
+    
+    &:before {
+        top: -6px;
+    }
+    
+    &:after {
+        top: 6px;
+    }
+    
+    &.open {
+        background: transparent;
+        
+        &:before {
+            top: 0;
+            transform: rotate(45deg);
+        }
+        
+        &:after {
+            top: 0;
+            transform: rotate(-45deg);
+        }
+    }
+
+    @media (min-width: $tablet) {
+        display: none;
+    }
+}

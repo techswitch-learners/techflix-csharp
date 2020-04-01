@@ -1,0 +1,13 @@
+﻿@import "../../styles/constants";
+
+.page {
+    background-color: $colorBackground;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.main {
+    flex-grow: 1;
+}

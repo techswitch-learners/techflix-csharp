@@ -1,0 +1,25 @@
+﻿@import "../../styles/constants";
+@import "../../styles/mixins";
+
+$inputPadding: $spacingSmall;
+
+.input {
+    @include fontInput;
+    margin-top: $spacingSmall;
+    background: $colorBackgroundInverse;
+    opacity: 0.8;
+    border: none;
+    width: calc(100% - #{2*$inputPadding});
+    max-width: 20rem;
+    padding: $spacingTiny $inputPadding;
+    transition: all 0.2s ease;
+    
+    &:focus {
+        opacity: 1;
+        @include hasOutline;
+    }
+    
+    @media (min-width: $desktop) {
+        max-width: 40rem;
+    }
+}

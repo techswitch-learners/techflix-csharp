@@ -1,0 +1,33 @@
+﻿@import "../../styles/constants";
+@import "../../styles/mixins";
+
+$cardSpacing: $spacingTiny;
+$marginForOutline: 1px;
+$undoGutter: -$spacingGutter;
+$listPadding: $spacingGutter - $cardSpacing;
+
+.container {
+    overflow-x: auto;
+    margin: 0 $undoGutter;
+
+    @media (min-width: $desktop) {
+        margin: 0;
+    }
+}
+
+.cardList {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    padding: $marginForOutline $listPadding;
+    
+    > li {
+        margin: $cardSpacing;
+    }
+
+    @media (min-width: $desktop) {
+        padding: $spacingSmall 0;
+        flex-wrap: wrap;
+    }
+}

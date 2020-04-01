@@ -1,0 +1,34 @@
+﻿﻿@import "../../styles/mixins";
+@import "../../styles/constants";
+
+.title {
+    @include fontSectionTitle;
+}
+
+.imageContainer {
+    margin-top: $spacingSection;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    
+}
+
+@media (min-width: 500px) and (max-width: $desktop) {
+    .section {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .imageContainer {
+        width: 50%;
+        order: 1;
+    }
+    
+    .detailsContainer {
+        width: 50%;
+        margin-top: $spacingSection;
+        padding-right: $spacingSection;
+    }
+}

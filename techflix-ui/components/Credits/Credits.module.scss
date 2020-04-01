@@ -1,0 +1,28 @@
+﻿@import "../../styles/constants";
+@import "../../styles/mixins";
+
+.section {
+    margin-top: $spacingSection;
+}
+
+.sectionTitle {
+    @include fontSectionTitle;
+}
+
+.credit {
+    border-bottom: 1px solid $colorBackgroundSubtle;
+    padding: $spacingSmall 0;
+}
+
+.title {
+    @include fontBody;
+    font-weight: 600;
+}
+
+.year {
+    @include fontLabel;
+}
+
+.role {
+    @include fontBody;
+}

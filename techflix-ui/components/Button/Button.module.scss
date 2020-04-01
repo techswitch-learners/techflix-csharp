@@ -1,0 +1,10 @@
+﻿@import "../../styles/constants";
+@import "../../styles/mixins";
+
+.primaryButton {
+    @include primaryButton($colorForegroundInverse, $colorBackgroundInverse);
+}
+
+.secondaryButton {
+    @include secondaryButton($colorForeground);
+}

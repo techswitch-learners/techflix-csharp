@@ -1,0 +1,94 @@
+﻿@import "../../styles/mixins";
+@import "../../styles/constants";
+
+.hero {
+    background-image: url("https://image.tmdb.org/t/p/original/orjiB3oUIsyz60hoEqkiGpy5CeO.jpg");
+    height: 20rem;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    max-height: calc(100vh - #{$mobileHeaderHeight});
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    @media (min-width: $tablet) {
+        height: 30rem;
+    }
+
+    @media (min-width: $desktop) {
+        height: 40rem;
+    }
+
+    @media (min-width: $largeDesktop) {
+        height: 50rem;
+    }
+}
+
+.cover {
+    @include cover;
+    background: linear-gradient(to top right, rgba($colorBackground, 0.9), rgba($colorBackground, 0.8), rgba($colorBackground, 0));
+    
+    @media (min-width: $tablet) {
+        background: linear-gradient(to top right, rgba($colorBackground, 0.9), rgba($colorBackground, 0.8) 30%, rgba($colorBackground, 0));
+    }
+
+    @media (min-width: $largeDesktop) {
+        background: linear-gradient(to right, rgba($colorBackground, 0.9), rgba($colorBackground, 0.85) calc(50% - 600px), rgba($colorBackground, 0) calc(50% + 800px), rgba($colorBackground, 0.9));
+    }
+}
+
+.filmCover {
+    @include cover;
+
+    @media (min-width: $largeDesktop) {
+        background: linear-gradient(to right, rgba($colorBackground, 1), rgba($colorBackground, 0) calc(50% - 800px), rgba($colorBackground, 0) calc(50% + 800px), rgba($colorBackground, 1));
+    }
+}
+
+.messageContainer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: $spacingMedium;
+
+    @media (min-width: $tablet) {
+        bottom: $spacingLarge;
+    }
+
+    @media (min-width: $desktop) {
+        bottom: $spacingHuge;
+    }
+}
+
+.messageContent {
+    @include gutterMargins;
+}
+
+.title {
+    @include fontHeroTitle;
+}
+
+.message {
+    @include fontHeroMessage;
+}
+
+.playButtonContainer {
+    z-index: 1;
+}
+
+.playLink {
+    display: block;
+}
+
+.playButton {
+    height: 10rem;
+    width: 10rem;
+    fill: $colorForeground;
+    transition: $animationQuick;
+    
+    
+    &:hover, &:focus {
+        fill: $colorHighlight;
+    }
+}

@@ -1,0 +1,15 @@
+﻿﻿@import "../../styles/mixins";
+@import "../../styles/constants";
+
+
+.field {
+    margin-top: $spacingSmall;
+}
+
+.fieldName {
+    @include fontLabel;
+}
+
+.fieldValue {
+    @include fontBody;
+}

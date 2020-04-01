@@ -1,0 +1,47 @@
+﻿@import "../../styles/constants";
+@import "../../styles/mixins";
+
+.footer {
+    margin-top: $spacingSection;
+    padding-top: $spacingSection;
+    padding-bottom: $spacingSection;
+    background: $colorBackgroundSubtle;
+    border-top: 1px solid $colorHighlight;
+}
+
+.content {
+    @include gutterMargins;
+}
+
+.logos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 -$spacingSmall;
+}
+
+.footerItem {
+    max-width: 50%;
+    flex-grow: 1;
+}
+
+.label {
+    display: block;
+    margin-bottom: $spacingMedium;
+    @include fontBody;
+}
+
+.logo {
+    height: 3rem;
+    width: auto;
+    padding: $spacingSmall;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background: $colorBackground;
+    }
+    
+    @media (min-width: $desktop) {
+        height: 5rem;
+    }
+}

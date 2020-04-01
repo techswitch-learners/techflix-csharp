@@ -1,0 +1,27 @@
+﻿@import "../../../styles/mixins";
+
+.cardWrapper {
+
+}
+
+.card {
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    transition: all ease 0.4s;
+}
+
+.link {
+    display: block;
+    height: 100%;
+    overflow: hidden;
+    transition: all ease 0.4s;
+
+    &:hover, &:focus  {
+        @include hasOutline;
+        
+        .card {
+            transform: scale(1.1);
+        }
+    }
+}

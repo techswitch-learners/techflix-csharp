@@ -1,0 +1,19 @@
+﻿@import "../../styles/constants";
+@import "../../styles/mixins";
+
+.section {
+    margin-top: $spacingSection;
+    padding-top: $spacingSection;
+    padding-bottom: $spacingSection;
+    background-color: $colorPrimary;
+}
+
+.content {
+    @include gutterMargins;
+    margin-top: $spacingSmall;
+}
+
+.title {
+    @include fontSectionTitle;
+    margin-bottom: $spacingSmall;
+}

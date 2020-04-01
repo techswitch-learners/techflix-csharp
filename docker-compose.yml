@@ -1,0 +1,39 @@
+version: '3'
+services:
+  techflix_ui:
+    build: 'techflix-ui'
+    restart: 'always'
+    ports:
+      - "3000:3000"
+    env_file:
+      - docker.env
+      - docker-secret.env
+  techflix_api:
+    build: 'techflix-api'
+    restart: 'always'
+    ports: 
+      - "8000:80"
+    env_file:
+      - docker.env
+      - docker-secret.env
+  catalogue:
+    build: 'catalogue-service'
+    ports:
+      - "8001:3000"
+    env_file:
+      - docker.env
+      - docker-secret.env
+  metadata:
+    build: 'metadata-service'
+    ports:
+      - "8002:3000"
+    env_file:
+      - docker.env
+      - docker-secret.env
+  reviews:
+    build: 'review-service'
+    ports:
+      - "8003:3000"
+    env_file:
+      - docker.env
+      - docker-secret.env

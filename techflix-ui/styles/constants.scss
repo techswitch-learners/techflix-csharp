@@ -1,0 +1,29 @@
+﻿$colorBackground: #090b13;
+$colorBackgroundSubtle: #181b27;
+$colorForeground: #d5dbf4;
+$colorForegroundSubtle: #6e7691;
+$colorHighlight: #00b4ff;
+$colorPrimary: #7f3f13;
+
+$colorBackgroundInverse: $colorForeground;
+$colorForegroundInverse: $colorBackground;
+
+$spacingSmallest: 0.25rem;
+$spacingTiny: 0.5rem;
+$spacingSmall: 1rem;
+$spacingMedium: 2rem;
+$spacingLarge: 4rem;
+$spacingHuge: 8rem;
+
+$spacingGutter: $spacingMedium;
+$spacingGutterDesktop: $spacingLarge;
+$spacingSection: $spacingMedium;
+
+$animationQuick: all 0.2s ease;
+$animationSlow: all 0.4s ease;
+
+$tablet: 768px;
+$desktop: 1024px;
+$largeDesktop: 1600px;
+
+$mobileHeaderHeight: 1.4rem + 2*$spacingSmall;

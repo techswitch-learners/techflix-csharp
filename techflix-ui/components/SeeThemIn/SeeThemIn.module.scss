@@ -1,0 +1,10 @@
+﻿@import "../../styles/mixins";
+@import "../../styles/constants";
+
+.section {
+    margin-top: $spacingSection;
+}
+
+.title {
+    @include fontSectionTitle;
+}

@@ -1,0 +1,60 @@
+﻿@import "../../../styles/constants";
+@import "../../../styles/mixins";
+
+
+$cardWidth: 10rem;
+
+.cardContainer {
+    width: $cardWidth;
+
+    @media (min-width: $desktop) {
+        width: calc(20% - #{$spacingSmall});
+        min-width: 12rem;
+    }
+}
+
+.card {
+    display: block;
+    position: relative;
+    background: $colorBackgroundSubtle;
+    transition: ease all 0.4s;   
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+
+    &:hover, &:focus {
+        @include hasOutline;
+
+        .image {
+            transform: scale(1.08);
+        }
+        
+        .name {
+            color: $colorHighlight;
+        }
+    }
+}
+
+.imageContainer {
+    width: 100%;
+    overflow: hidden;
+}
+
+.image {
+    width: 100%;
+    transition: ease all 0.4s;
+}
+
+.nameContainer {
+    padding: $spacingSmall $spacingTiny;
+    text-align: center;
+
+    @media (min-width: $desktop) {
+        padding: $spacingSmall;
+    }
+}
+
+.name {
+    @include fontBody;
+    transition: ease all 0.4s;
+}

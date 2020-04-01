@@ -1,0 +1,15 @@
+﻿@import "../../styles/mixins";
+
+.section {
+    margin-top: $spacingSection;
+}
+
+.content {
+    @include gutterMargins;
+    position: relative;
+}
+
+.title {
+    @include fontSectionTitle;
+    margin-bottom: $spacingSmall;
+}

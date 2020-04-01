@@ -1,0 +1,8 @@
+.idea/
+techflif-api/bin/
+obj/
+node_modules/
+docker-secret.env
+logs/
+.venv
+.next

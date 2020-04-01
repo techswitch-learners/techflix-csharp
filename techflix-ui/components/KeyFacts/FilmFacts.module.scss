@@ -1,0 +1,18 @@
+﻿@import "../../styles/mixins";
+@import "../../styles/constants";
+
+.posterImage {
+    width: 100%;
+    height: auto;
+    margin-top: $spacingSection;
+    display: none;
+    
+    @media (min-width: $desktop) {
+        display: block;
+    }
+}
+
+.title {
+    @include fontSectionTitle;
+    margin-top: $spacingSection;
+}

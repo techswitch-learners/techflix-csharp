@@ -1,0 +1,50 @@
+﻿@import "../../styles/mixins";
+@import "../../styles/constants";
+
+.header {
+    background: $colorBackground;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    border-bottom: 1px solid $colorHighlight;
+}
+
+.nav {
+    @include gutterMargins;
+    padding: $spacingSmall 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navLink {
+    @include fontNav;
+    transition: $animationQuick;
+    
+    &:hover, &:focus {
+        color: $colorHighlight;
+    }
+}
+
+.pageLinks {
+    display: none;
+    
+    > .navLink {
+        margin-right: $spacingMedium;
+    }
+
+    @media (min-width: $tablet) {
+        display: block;
+    }
+}
+
+.accountIcon {
+    height: 1.4 * 1rem;
+    vertical-align: middle;
+    fill: $colorForeground;
+    
+    @media (min-width: $tablet) {
+        height: 1.4 * 1.5rem;
+    }
+}
