@@ -1,6 +1,4 @@
-﻿using System.Runtime.InteropServices;
-
-namespace TechFlixApi.Models.Metadata
+﻿namespace TechFlixApi.Models.Metadata
 {
     public class FilmMetadata
     {

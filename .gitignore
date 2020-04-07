@@ -1,5 +1,6 @@
 .idea/
-techflif-api/bin/
+techflix-api/bin/
+selenium-tests/SeleniumTests/bin/
 obj/
 node_modules/
 docker-secret.env

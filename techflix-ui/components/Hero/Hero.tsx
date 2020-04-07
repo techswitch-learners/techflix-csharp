@@ -16,7 +16,7 @@ export const Hero: FunctionComponent = () => {
             <div className={styles.cover}/>
             <div className={styles.messageContainer}>
                 <div className={styles.messageContent}>
-                    <h1 className={styles.title}>Welcome!</h1>
+                    <h1 data-test-id="hero-title" className={styles.title}>Welcome!</h1>
                     <p className={styles.message}>All the films you love!</p>
                     <p className={styles.message}>Start searching now.</p>
                     <SearchForm/>
