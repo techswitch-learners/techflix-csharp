@@ -8,7 +8,7 @@ router.get('/', (req: Request, res: Response) => {
     res.json({
         version,
         endpoints: [
-            "/films"
+            "/features",
         ]
     });
 });

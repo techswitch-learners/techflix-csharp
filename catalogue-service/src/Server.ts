@@ -10,7 +10,9 @@ import 'express-async-errors';
 import BaseRouter from './routes';
 import FilmsRoutes from './routes/films';
 import PeopleRoutes from './routes/people';
+import FeatureRoutes from './routes/features';
 import logger from '@shared/Logger';
+import {importTestData} from "./importTestData";
 
 
 // Init express
@@ -39,7 +41,8 @@ if (process.env.NODE_ENV === 'production') {
 // Add APIs
 app.use('/', BaseRouter);
 app.use('/films', FilmsRoutes);
-app.use('/people', PeopleRoutes)
+app.use('/people', PeopleRoutes);
+app.use('/features', FeatureRoutes);
 
 // Print API errors
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
@@ -48,6 +51,8 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
         error: err.message,
     });
 });
+
+importTestData();
 
 
 // Export express instance

@@ -1,5 +1,6 @@
 .idea/
-techflix-api/bin/
+techflix-api/TechFlixApi/bin/
+techflix-api/TechFlixApi.Tests/bin/
 selenium-tests/SeleniumTests/bin/
 obj/
 node_modules/
