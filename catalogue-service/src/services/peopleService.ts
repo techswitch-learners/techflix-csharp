@@ -26,7 +26,7 @@ export async function getPerson(id: number): Promise<Person> {
 
 export async function createPerson(id: number, person: Person): Promise<Person> {
     const records = await runWriteTransaction(
-        "CREATE (person:Person { id: $id }) RETURN person", {id: int(id)})
+        "CREATE (person:Person { id: $id, name: $name }) RETURN person", {id: int(id), name: person.name});
     return toPerson(records[0]);
 }
 
@@ -55,8 +55,9 @@ export async function getFilms(id: number) {
 }
 
 function toPerson(record: Record): Person {
-    const feature = record.get("person").properties;
+    const person = record.get("person").properties;
     return {
-        id: feature.id.toNumber(),
+        id: person.id.toNumber(),
+        name: person.name,
     }
 }

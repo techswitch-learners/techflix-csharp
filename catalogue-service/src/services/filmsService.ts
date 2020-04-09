@@ -26,7 +26,7 @@ export async function getFilm(id: number): Promise<Film> {
 
 export async function createFilm(id: number, film: Film): Promise<Film> {
     const records = await runWriteTransaction(
-        "CREATE (film:Film { id: $id }) RETURN film", {id: int(id)});
+        "CREATE (film:Film { id: $id, title: $title }) RETURN film", {id: int(id), title: film.title});
     return toFilm(records[0]);
 }
 
@@ -71,8 +71,9 @@ export function toPerformance(record: Record): Performance {
 }
 
 function toFilm(record: Record): Film {
-    const feature = record.get("film").properties;
+    const film = record.get("film").properties;
     return {
-        id: feature.id.toNumber(),
+        id: film.id.toNumber(),
+        title: film.title,
     }
 }

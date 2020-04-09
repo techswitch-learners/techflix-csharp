@@ -46,9 +46,13 @@ async function addFeatures() {
 async function addFilms() {
     await Promise.all(
         [
-            createFilm(1726, {id: 1726}),
-            createFilm(299534, {id: 299534}),
-            createFilm(284053, {id: 284053}),
+            createFilm(1726, {id: 1726, title: "Iron Man"}),
+            createFilm(299534, {id: 299534, title: "Avengers: Endgame"}),
+            createFilm(284053, {id: 284053, title: "Thor: Ragnarok"}),
+            createFilm(315837, {id: 315837, title: "Ghost in the Shell (2017)"}),
+            createFilm(74465, {id: 74465, title: "We Bought a Zoo"}),
+            createFilm(286217, {id: 286217, title: "The Martian (2015)"}),
+            createFilm(55721, {id: 55721, title: "Bridesmaids"}),
         ]
     )
 }
@@ -56,9 +60,13 @@ async function addFilms() {
 async function addActors() {
     await Promise.all(
         [
-            createPerson(3223, {id: 3223}),
-            createPerson(16828, {id: 16828}),
-            createPerson(74568, {id: 74568}),
+            createPerson(3223, {id: 3223, name: "Robert Downey Jr."}),
+            createPerson(16828, {id: 16828, name: "Chris Evans"}),
+            createPerson(74568, {id: 74568, name: "Chris Hemsworth"}),
+            createPerson(1245, {id: 1245, name: "Scarlett Johansson"}),
+            createPerson(1892, {id: 1892, name: "Matt Damon"}),
+            createPerson(83002, {id: 83002, name: "Jessica Chastain"}),
+            createPerson(41091, {id: 41091, name: "Kristen Wiig"}),
         ]
     )
 }
@@ -71,6 +79,15 @@ async function addCastMembers() {
             actedIn(16828, 299534, "Captain America / Chris Rodgers"),
             actedIn(74568, 299534, "Thor Odinson"),
             actedIn(74568, 284053, "Thor Odinson"),
+            actedIn(1245, 1726, "Natasha Romanoff / Black Widow"),
+            actedIn(1245, 299534, "Natasha Romanoff / Black Widow"),
+            actedIn(1245, 315837, "Major Mira Killian / Motoko Kusanagi"),
+            actedIn(1245, 74465, "Kelly Foster"),
+            actedIn(1892, 74465, "Benjamin Mee"),
+            actedIn(1892, 286217, "Mark Watney"),
+            actedIn(83002, 286217, "Melissa Lewis"),
+            actedIn(41091, 286217, "Annie Montrose"),
+            actedIn(41091, 55721, "Annie Walker"),
         ]
     )
 }

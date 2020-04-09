@@ -26,13 +26,13 @@ namespace TechFlixApi.Services
         public IEnumerable<CatalogueFilm> GetFilms()
         {
             var request = new RestRequest("/films");
-            return _client.Get<List<CatalogueFilm>>(request).Data;
+            return _client.Get<CatalogueList<CatalogueFilm>>(request).Data.Items;
         }
 
         public IEnumerable<CataloguePerson> GetPeople()
         {
             var request = new RestRequest("/people");
-            return _client.Get<List<CataloguePerson>>(request).Data;
+            return _client.Get<CatalogueList<CataloguePerson>>(request).Data.Items;
         }
 
         public CatalogueFilm GetFilm(int id)
