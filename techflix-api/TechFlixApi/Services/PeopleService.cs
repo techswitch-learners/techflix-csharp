@@ -7,6 +7,7 @@ namespace TechFlixApi.Services
     public interface IPeopleService
     {
         ResultList<Person> GetPeople();
+        ResultList<Person> GetCastForFilm(int filmId);
         Person GetPerson(int id);
     }
     
@@ -24,6 +25,14 @@ namespace TechFlixApi.Services
         public ResultList<Person> GetPeople()
         {
             var people = _catalogueService.GetPeople().Select(PopulatePerson);
+            return new ResultList<Person>(people);
+        }
+
+        public ResultList<Person> GetCastForFilm(int filmId)
+        {
+            var people = _catalogueService
+                .GetCastForFilm(filmId)
+                .Select(performance => GetPerson(performance.PersonId));
             return new ResultList<Person>(people);
         }
 

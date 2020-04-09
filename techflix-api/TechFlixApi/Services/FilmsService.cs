@@ -7,6 +7,7 @@ namespace TechFlixApi.Services
     public interface IFilmsService
     {
         ResultList<Film> GetFilms();
+        ResultList<Film> GetFilmsForPerson(int personId);
         Film GetFilm(int id);
     }
     
@@ -26,7 +27,16 @@ namespace TechFlixApi.Services
         public ResultList<Film> GetFilms()
         {
             var catalogueFilms = _catalogueService.GetFilms();
-            var films = catalogueFilms.Select(PopulateFilm).ToList(); return new ResultList<Film>(films);
+            var films = catalogueFilms.Select(PopulateFilm).ToList(); 
+            return new ResultList<Film>(films);
+        }
+
+        public ResultList<Film> GetFilmsForPerson(int personId)
+        {
+            var films = _catalogueService
+                .GetPerformancesForPerson(personId)
+                .Select(performance => GetFilm(performance.FilmId));
+            return new ResultList<Film>(films);
         }
 
         public Film GetFilm(int id)

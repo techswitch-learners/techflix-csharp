@@ -44,7 +44,7 @@ namespace TechFlixApi.Controllers
         [HttpGet("{id}/cast")]
         public ActionResult<ResultList<Person>> GetCast([FromRoute] int id)
         {
-            return _peopleService.GetPeople();
+            return _peopleService.GetCastForFilm(id);
         }
         
         [HttpGet("{id}/similar")]

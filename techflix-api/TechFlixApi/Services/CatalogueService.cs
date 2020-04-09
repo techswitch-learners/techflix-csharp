@@ -10,6 +10,8 @@ namespace TechFlixApi.Services
     {
         IEnumerable<CatalogueFilm> GetFilms();
         IEnumerable<CataloguePerson> GetPeople();
+        IEnumerable<CataloguePerformance> GetCastForFilm(int id);
+        IEnumerable<CataloguePerformance> GetPerformancesForPerson(int id);
         CatalogueFilm GetFilm(int id);
         CataloguePerson GetPerson(int id);
     }
@@ -45,6 +47,18 @@ namespace TechFlixApi.Services
         {
             var request = new RestRequest($"/people/{id}");
             return _client.Get<CataloguePerson>(request).Data;
+        }
+
+        public IEnumerable<CataloguePerformance> GetCastForFilm(int id)
+        {
+            var request = new RestRequest($"/films/{id}/cast");
+            return _client.Get<List<CataloguePerformance>>(request).Data;
+        }
+
+        public IEnumerable<CataloguePerformance> GetPerformancesForPerson(int id)
+        {
+            var request = new RestRequest($"/people/{id}/films");
+            return _client.Get<List<CataloguePerformance>>(request).Data;
         }
     }
 }

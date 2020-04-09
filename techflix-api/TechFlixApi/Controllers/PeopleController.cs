@@ -38,7 +38,7 @@ namespace TechFlixApi.Controllers
         [HttpGet("{id}/films")]
         public ActionResult<ResultList<Film>> GetFilms([FromRoute] int id)
         {
-            return _filmsService.GetFilms();
+            return _filmsService.GetFilmsForPerson(id);
         }
     }
 }
